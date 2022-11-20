@@ -1,0 +1,14 @@
+If less time, see the population, sample difference image in this directory
+
+1. See the foll doc:
+
+    https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-sample/a/population-and-sample-standard-deviation-review#:~:text=Standard%20deviation%20measures%20the%20spread,sample%20representing%20a%20larger%20population.
+
+2.See the foll video for more clarity:
+
+    https://www.khanacademy.org/math/ap-statistics/summarizing-quantitative-data-ap/more-standard-deviation/v/review-and-intuition-why-we-divide-by-n-1-for-the-unbiased-sample-variance
+
+    AND if time permits
+
+    https://www.khanacademy.org/math/ap-statistics/summarizing-quantitative-data-ap/more-standard-deviation/v/another-simulation-giving-evidence-that-n-1-gives-us-an-unbiased-estimate-of-variance
+
