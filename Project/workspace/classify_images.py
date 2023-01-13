@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/classify_images.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                 
+# PROGRAMMER: Vivek Dhanade
+# DATE CREATED: 13-12-22                                 
 # REVISED DATE: 
 # PURPOSE: Create a function classify_images that uses the classifier function 
 #          to create the classifier labels and then compares the classifier 
 #          labels to the pet image labels. This function inputs:
 #            -The Image Folder as image_dir within classify_images and function 
 #             and as in_arg.dir for function call within main. 
-#            -The results dictionary as results_dic within classify_images 
+#            -The results dictionary as results_dic within classify_images0 
 #             function and results for the functin call within main.
 #            -The CNN model architecture as model wihtin classify_images function
 #             and in_arg.arch for the function call within main. 
@@ -65,4 +65,13 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    None 
+    for filename in results_dic:
+      if images_dir=="uploaded_images/":
+        model_label=classifier(images_dir+filename,model).lower().strip()
+      else:
+        model_label=classifier(images_dir+"/"+filename,model).lower().strip()
+      results_dic[filename].append(model_label)
+      if results_dic[filename][0] in model_label:
+        results_dic[filename].append(1)
+      else:
+        results_dic[filename].append(0)

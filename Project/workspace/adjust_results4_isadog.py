@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/adjust_results4_isadog.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                 
+# PROGRAMMER: Vivek Dhanade
+# DATE CREATED:  13-12-22                               
 # REVISED DATE: 
 # PURPOSE: Create a function adjust_results4_isadog that adjusts the results 
 #          dictionary to indicate whether or not the pet image label is of-a-dog, 
@@ -67,4 +67,26 @@ def adjust_results4_isadog(results_dic, dogfile):
     Returns:
            None - results_dic is mutable data type so no return needed.
     """           
-    None
+    dognames_dic=dict()
+
+    with open(dogfile,'r') as infile:
+      line=infile.readline().rstrip()
+      while line!="":
+        if line in dognames_dic:
+          continue
+        else:
+          dognames_dic[line]=1
+        line=infile.readline().rstrip()
+    for key in results_dic:
+      if results_dic[key][0] in dognames_dic:
+        results_dic[key].append(1)
+      else:
+        results_dic[key].append(0)
+        
+      if results_dic[key][1] in dognames_dic:
+        results_dic[key].append(1)
+      else:
+        results_dic[key].append(0)
+
+
+
